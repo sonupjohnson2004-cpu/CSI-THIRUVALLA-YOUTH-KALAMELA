@@ -24,6 +24,13 @@ A production-ready, fully responsive web application for displaying real-time ta
   - Enter or edit 1st, 2nd, and 3rd place results and scores individually or in bulk.
   - Delete or reorder categories.
 - **Live Publishing**: All changes are instantly broadcast to active viewers without manual refresh.
+- **Master Excel Export**:
+  - One-click export of complete competition standings and the 23-unit Church Point Table formatted in Excel directly from the admin header.
+  - Public viewer export also available at `/api/export`.
+- **Multi-Year Talent Show Editions**:
+  - Ability to host a brand new talent show for 2027 or future years at `/admin/editions`.
+  - Option to clone all 34 competition categories and 23 church units with a single click with clean scores.
+  - Seamlessly switch between active and archived editions.
 
 ### 3. Intelligent Excel Spreadsheet Import
 - **Flexible Column Mapping**: Upload any `.xlsx`, `.xls`, or `.csv` spreadsheet. The system inspects sheet names and columns, offering smart automatic header detection with full manual dropdown mapping.
@@ -165,19 +172,31 @@ The application detects `postgresql://` and automatically connects using the con
 
 ---
 
-### Deploying via Vercel CLI or Git
+### Deploying via Git and Vercel
 
-#### Deploy via GitHub / GitLab:
-1. Push the code to a Git repository.
-2. Import the project into Vercel.
-3. Configure the Environment Variables listed above.
-4. Click **Deploy**. Tables are auto-initialized on first run.
-
-#### Deploy via Vercel CLI:
+#### Step 1: Push to your Git Repository (GitHub / GitLab)
+Run the following commands in the project folder:
 ```bash
-npm install -g vercel
-vercel
+cd "C:\Users\Sonu P Johnson\.gemini\antigravity\scratch\talent-show-results"
+
+# 1. Add your remote repository URL (replace with your repo URL):
+git remote add origin https://github.com/<your-username>/<your-repo-name>.git
+
+# 2. Push your main branch:
+git branch -M main
+git push -u origin main
 ```
+
+#### Step 2: Deploy to Vercel
+1. Go to [vercel.com/new](https://vercel.com/new) and sign in.
+2. Under "Import Git Repository", select your repository.
+3. In **Environment Variables**, configure:
+   - `ADMIN_USERNAME`: `admin` (or your chosen username)
+   - `ADMIN_PASSWORD`: `<your-admin-password>`
+   - `ADMIN_JWT_SECRET`: `<random-32-character-secret>`
+   - `DATABASE_URL`: Your Turso LibSQL URL (`libsql://...`) or PostgreSQL URL (`postgres://...`)
+   - `DATABASE_AUTH_TOKEN`: Your Turso token (if using Turso)
+4. Click **Deploy**. Vercel will automatically build and deploy your talent show website!
 
 ---
 
