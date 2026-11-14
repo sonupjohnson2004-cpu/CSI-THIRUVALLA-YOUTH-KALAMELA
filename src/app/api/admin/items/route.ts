@@ -13,7 +13,8 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const items = await getAllResultItems();
+    const editionId = req.nextUrl.searchParams.get('edition') || undefined;
+    const items = await getAllResultItems(editionId);
     return NextResponse.json({ success: true, items });
   } catch (error: any) {
     console.error('Error in admin GET /items:', error);
@@ -30,6 +31,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const {
+      edition_id,
       category,
       round,
       segment,
@@ -55,6 +57,7 @@ export async function POST(req: NextRequest) {
     }
 
     const input: ResultItemInput = {
+      edition_id: edition_id || undefined,
       category: category.trim(),
       round: (round && round.trim()) || 'Finals',
       segment: segment ? segment.trim() : null,
@@ -73,7 +76,7 @@ export async function POST(req: NextRequest) {
       notes: notes ? notes.trim() : null,
     };
 
-    const newItem = await createResultItem(input);
+    const newItem = await createResultItem(input, edition_id);
 
     // Broadcast real-time update to all active viewers
     eventBroadcaster.broadcast('item-created');

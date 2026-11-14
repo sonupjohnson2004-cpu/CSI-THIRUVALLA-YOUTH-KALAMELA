@@ -13,6 +13,7 @@ import {
   Menu,
   X,
   Loader2,
+  Calendar,
 } from 'lucide-react';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -73,6 +74,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { href: '/admin', label: 'Overview', icon: LayoutDashboard },
     { href: '/admin/items', label: 'Manage Results', icon: Trophy },
     { href: '/admin/import', label: 'Excel Import', icon: FileSpreadsheet },
+    { href: '/admin/editions', label: 'Years / Editions', icon: Calendar },
   ];
 
   return (

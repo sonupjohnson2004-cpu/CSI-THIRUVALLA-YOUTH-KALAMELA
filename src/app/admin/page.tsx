@@ -14,6 +14,7 @@ import {
   Edit3,
   Loader2,
   Sparkles,
+  Calendar,
 } from 'lucide-react';
 import { ResultItem } from '@/types';
 
@@ -76,6 +77,14 @@ export default function AdminDashboardPage() {
           >
             <PlusCircle className="w-4 h-4" />
             <span>Add Result Item</span>
+          </Link>
+          <Link
+            href="/admin/editions"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-md shadow-purple-600/20 transition active:scale-95"
+            title="Host a new talent show for upcoming years or manage editions"
+          >
+            <Calendar className="w-4 h-4" />
+            <span>Host Next Edition</span>
           </Link>
           <Link
             href="/admin/import"

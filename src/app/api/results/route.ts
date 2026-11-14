@@ -1,17 +1,23 @@
-import { NextResponse } from 'next/server';
-import { getAllResultItems, getLastUpdated } from '@/lib/db';
+import { NextRequest, NextResponse } from 'next/server';
+import { getAllResultItems, getLastUpdated, getAllEditions, getActiveEditionId } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
-    const items = await getAllResultItems();
+    const requestedEdition = req.nextUrl.searchParams.get('edition') || undefined;
+    const activeEditionId = await getActiveEditionId();
+    const editions = await getAllEditions();
+    const items = await getAllResultItems(requestedEdition);
     const lastUpdated = await getLastUpdated();
 
     return NextResponse.json(
       {
         success: true,
         items,
+        editions,
+        activeEditionId,
+        selectedEditionId: requestedEdition || activeEditionId,
         lastUpdated,
       },
       {

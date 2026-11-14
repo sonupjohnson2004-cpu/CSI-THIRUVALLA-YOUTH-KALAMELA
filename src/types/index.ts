@@ -1,5 +1,15 @@
+export interface TalentShowEdition {
+  id: string;
+  name: string;
+  year: number;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface ResultItem {
   id: string;
+  edition_id?: string;
   category: string;
   round: string;
   segment?: string | null;
