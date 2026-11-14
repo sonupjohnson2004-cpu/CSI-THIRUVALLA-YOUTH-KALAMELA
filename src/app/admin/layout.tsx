@@ -94,7 +94,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     Admin Center
                   </span>
                   <span className="text-[10px] text-indigo-400 font-semibold uppercase tracking-wider">
-                    Talent Showcase 2026
+                    CSI Thiruvalla Kalamela 2026
                   </span>
                 </div>
               </Link>

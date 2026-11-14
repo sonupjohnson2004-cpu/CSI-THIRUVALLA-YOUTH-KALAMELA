@@ -164,10 +164,10 @@ export default function ViewerHomePage() {
                 <Sparkles className="w-3.5 h-3.5" /> Official Standings Board
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-amber-200">
-                Annual Talent Showcase 2026
+                CSI Thiruvalla Youth Kalamela 2026
               </h1>
               <p className="mt-2 text-sm sm:text-base text-slate-300 max-w-2xl">
-                Real-time leaderboard & verified competition results. All placements are synchronized instantly as judges finalize decisions.
+                Zimrah 2026 • Real-time leaderboard & verified competition results across 34 events and 23 church units. Synchronized live as judges finalize evaluations.
               </p>
             </div>
 
