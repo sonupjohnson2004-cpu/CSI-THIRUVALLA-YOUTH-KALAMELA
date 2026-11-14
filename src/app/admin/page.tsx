@@ -61,6 +61,15 @@ export default function AdminDashboardPage() {
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
+          <a
+            href="/api/admin/export"
+            download
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shadow-emerald-600/20 transition active:scale-95"
+            title="Download the full competition standings and church point table in Excel format"
+          >
+            <Download className="w-4 h-4" />
+            <span>Download Master Excel</span>
+          </a>
           <Link
             href="/admin/items?action=new"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-md shadow-indigo-600/20 transition active:scale-95"
@@ -70,19 +79,11 @@ export default function AdminDashboardPage() {
           </Link>
           <Link
             href="/admin/import"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shadow-emerald-600/20 transition active:scale-95"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold border border-slate-700 transition active:scale-95"
           >
             <FileSpreadsheet className="w-4 h-4" />
             <span>Import Excel</span>
           </Link>
-          <a
-            href="/admin/template"
-            download
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-200 transition"
-          >
-            <Download className="w-4 h-4 text-slate-500" />
-            <span>Sample Excel</span>
-          </a>
         </div>
       </div>
 

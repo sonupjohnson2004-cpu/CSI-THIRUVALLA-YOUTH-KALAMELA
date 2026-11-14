@@ -122,6 +122,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
             {/* Right Action Buttons */}
             <div className="hidden md:flex items-center gap-3">
+              <a
+                href="/api/admin/export"
+                download
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-emerald-300 bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-600/50 shadow-sm transition active:scale-95"
+                title="Download complete competition results and church point table in Excel format"
+              >
+                <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Export Master Excel</span>
+              </a>
+
               <Link
                 href="/"
                 target="_blank"
@@ -180,6 +190,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               );
             })}
             <div className="pt-2 border-t border-slate-800 flex items-center justify-between">
+              <a
+                href="/api/admin/export"
+                download
+                className="flex items-center gap-1.5 text-xs text-emerald-400 font-bold"
+              >
+                <FileSpreadsheet className="w-3.5 h-3.5" />
+                <span>Export Master Excel</span>
+              </a>
               <Link
                 href="/"
                 target="_blank"
