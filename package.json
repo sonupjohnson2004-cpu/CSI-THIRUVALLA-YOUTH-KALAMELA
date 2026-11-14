@@ -1,0 +1,36 @@
+{
+  "name": "talent-show-results",
+  "version": "1.0.0",
+  "description": "Production-ready, responsive website for displaying talent show results with real-time updates and authenticated admin management.",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "node scripts/seed.mjs"
+  },
+  "dependencies": {
+    "@libsql/client": "0.18.0",
+    "bcryptjs": "3.0.3",
+    "clsx": "2.1.1",
+    "jose": "6.2.17",
+    "lucide-react": "1.72.0",
+    "next": "14.2.20",
+    "pg": "8.23.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwind-merge": "3.7.0",
+    "xlsx": "0.18.5"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "3.0.0",
+    "@types/node": "20.17.10",
+    "@types/pg": "8.23.1",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.6.3"
+  }
+}
